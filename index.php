@@ -137,6 +137,35 @@ Cependant, Symfony ,qui utilise Doctrine(son ORM) est très efficace. Vous pouve
     
 <h2>Propriété de requirements</h2>
     Ce paramètre peut servir de validation de paramètres de route. Il permet de pouvoir s'assurer que le paramètre de path correspond au bon format. Souvent la valeur sera décrite en rejex, un langage que vous ne maitriser peut etre pas, mais l'on va rester sur des notions simples.
+
+    * dans le premier exemple, les caractères accéptés sont des lettres alphabétiques de "a" à "z"en miniscule, et de "A" à "Z" en majuscule.
+
+    * Dans le second exemple, les caractères accéptés sont entre 0 et 9.
+
+    *Dans le 3°eme exemple ,le requirement disparait , il est précisé entre des chevrons, c'est une autre façon de faire , similaire à defaults.
+
+    <?php
+
+#[Route('/user/{name}', requirement: ['name' => '[a-zA-Z]+'])]
+  public function showUserWithName(request $request, $name)
+  {
+    //...
+  }
+
+#[Route('/user/{name}', requirement: ['id'=> '\d+'])]
+  public function showUserWithName(request $request, $name)
+  {
+    //...
+  }
+
+#[Route('/user/{id<\d+}')]
+  public function showUserWithName(request $request, $name)
+  {
+    //...
+  }
+
+
+    ?>
     
     
     
