@@ -17,6 +17,10 @@
     C'est ce que nous aborderons à travers ce cours sur le routing dans Symfony 5.4 .
   </p>
 
+    <h2>Configuration routing avec annotations</h2>
+    Selopn les bonnes pratiques , il est recommandé d'écrire son système de routes via les "PHP attributes".Nous verrons ensuite le routing écrit en annotations (qui deviendera deprecated dans la prochaine version majeure) ou encore au format 'YAML' dans le routing avec YAML et débogage de ce cours.
+    C'est aussi une syntaxe commune que l'on peut retrouver  dans certains bundles ou anciens projets Symfony.
+    Les annotation,s sont utilisées dans la plupart des langages informatiques.ils s'agissait du nom de métadonnées qu'utilisaient PHP avant sa version8, et par extension Symfony
  
   <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
   </body>
