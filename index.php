@@ -133,6 +133,10 @@ Cependant, Symfony ,qui utilise Doctrine(son ORM) est très efficace. Vous pouve
   }
 
   ?>
+
+    
+<h2>Propriété de requirements</h2>
+    Ce paramètre peut servir de validation de paramètres de route. Il permet de pouvoir s'assurer que le paramètre de path correspond au bon format. Souvent la valeur sera décrite en rejex, un langage que vous ne maitriser peut etre pas, mais l'on va rester sur des notions simples.
     
     
     
