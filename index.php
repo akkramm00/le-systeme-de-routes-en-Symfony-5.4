@@ -18,9 +18,36 @@
   </p>
 
     <h2>Configuration routing avec annotations</h2>
-    Selopn les bonnes pratiques , il est recommandé d'écrire son système de routes via les "PHP attributes".Nous verrons ensuite le routing écrit en annotations (qui deviendera deprecated dans la prochaine version majeure) ou encore au format 'YAML' dans le routing avec YAML et débogage de ce cours.
+   <p>
+    Selon les bonnes pratiques , il est recommandé d'écrire son système de routes via les "PHP attributes".Nous verrons ensuite le routing écrit en annotations (qui deviendera deprecated dans la prochaine version majeure) ou encore au format 'YAML' dans le routing avec YAML et débogage de ce cours.
     C'est aussi une syntaxe commune que l'on peut retrouver  dans certains bundles ou anciens projets Symfony.
-    Les annotation,s sont utilisées dans la plupart des langages informatiques.ils s'agissait du nom de métadonnées qu'utilisaient PHP avant sa version8, et par extension Symfony
+    Les annotation,s sont utilisées dans la plupart des langages informatiques.ils s'agissait du nom de métadonnées qu'utilisaient PHP avant sa version8, et par extension Symfony.
+    Ainsi, depuis PHP 8, bien qu'il soit aussi possible d'utiliser les annotations, les attributs ont été introduits pour remplacer ceux-ci. Les attributs ont l'avantage d'etre maintenant pris nativement en charge par PHP? contrairemnt aux annotations qui nécessitent un logiciel tiers pour les compiler.
+    Simplement dit , ne soyez pas étonné si on parle parfois d'annotations dans le routing alors qu'ils'agit d'attributs.
+
+     examples:
+
+  <?php
+// Annotraions Routing
+
+@Route("/tasks", name= "task_list")
+public function list()
+{
+  //...
+}
+
+
+  // Attributs routing
+  #[Route("/tasks", name: "task_list", methods: ['GET'])]
+    public function list()
+{
+  //...
+}
+
+?>
+   </p> 
+    
+    
  
   <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
   </body>
