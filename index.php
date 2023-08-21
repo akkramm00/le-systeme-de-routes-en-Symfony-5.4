@@ -45,7 +45,21 @@ public function list()
 }
 
 ?>
+
+     Pour que le système d'annotaions fonctionne , il faut installer le bundle suivant à l'aide du terminal de commande:
+
+    $  composer require doctrine/annoptations
    </p> 
+
+    <h2>Importer un namespace</h2>
+    <p>
+      Il est nécessaire à present d'inmporter un namespace en utilisant cette commande dans chaque classe de controller .
+
+      " use Symfony\Component\Routing\Annotation\Route "
+      Nous avons ainsi configuré tous les éléments nécessaires pour que les annotations des controllers fonctionnent.
+
+      L'enorme avantage d'utiliser les annotations ou les PHP attributes pour le routing plutôt d'utiliser des fichiers dédiés, c'est qu'il n'y a pas besoin de naviguer entre les fichiers controllers et routes, puisque nous pouvons accéder immédiatement à l'information associant la route à un controller.
+    </p>
     
     
  
