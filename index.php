@@ -106,6 +106,33 @@ public function list()
   
   ?>
 
+    <h1>Récuperation du paramètre dans le controller</h1>
+
+    <p>
+      Comment récupérer le paramètre dans le controller ? Par exemple avec "attributes-get()"de request.
+      
+      <?php
+  #[Route('/user/name' , defaults: ['name' =>'john'])]
+  public function show(Request $request)
+  {
+    $title = $request->attributes->get('name');
+    //...
+  }
+
+  ?>
+Cependant, Symfony ,qui utilise Doctrine(son ORM) est très efficace. Vous pouvez simplement préciser la propriété dans les paramètres de la fonction et il sera capable de comprendre seul ce qu'il doit chercher , grace au typage du paramètre. C'est ce qu'on appelle au "ParaConverter".
+
+      
+    </p>
+    <?php
+  #[Route('/user/name' , defaults: ['name' =>'john'])]
+  public function show(Request $request, $name)
+  {
+   
+    //...
+  }
+
+  ?>
     
     
     
