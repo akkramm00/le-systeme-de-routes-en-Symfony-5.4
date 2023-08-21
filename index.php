@@ -60,6 +60,54 @@ public function list()
 
       L'enorme avantage d'utiliser les annotations ou les PHP attributes pour le routing plutôt d'utiliser des fichiers dédiés, c'est qu'il n'y a pas besoin de naviguer entre les fichiers controllers et routes, puisque nous pouvons accéder immédiatement à l'information associant la route à un controller.
     </p>
+
+    <h2> Paramètres Route</h2>
+    Les paramètres de la fonction d'annotation route définissent les propriétés d'une route. Cette fonction permet de mapper une URL à une action ou une méthode dans le controlleur de l'application.
+    En voici quelques-unes :
+
+    Methods:
+<?php
+    #[Route('/tasks', name: "task_list", methods: ['GET', 'HEAD'])]
+    public function  list()
+{
+  /...
+}
+  ?>
+
+    Schemes ;
+    Schemes permet de spécidier si nous voulons qu'une page soit accéssible en HTTP ou seulement en HTTPS.
+
+    <?php
+    #[Route('/tasks', name: "task_list", methods: ['GET', 'HEAD'], schemes:[HTTP])]
+    public function  list()
+{
+  /...
+}
+  ?>
+
+   Path et son paramètre :
+    Le paramètre "path" dans le routage désigne une partie variable d'une URL qui peut etre utilisée pour fournir des informations supplémentaires.
+
+    <h3>Methode</h3>
+    paramètre dynamique dans la route :
+    Par exemple , dans une liste d'utilisateurs, le paramètre dynamique de path va permettre de récuperer un utilisateur précis. Mais bien sûr il ne serait pas raisonnable de créer un eroute par utilisateur, imaginons qu'ily'en ait des milliers! On a donc besoin d'un "paramètre dynamique"
+    Pour cela , on utilise le nom de la propriété d'identification, encadré avec des accolades. Id est souvent utilisé mais on peut la nommer autrement.
+
+    
+    <?php
+  #[Route('/user/{name}')]
+
+// il est possible d'ajouter le paramétre par defauts à la route avec une valeur par defauts. Ce paramètre fait référence au paramètre de path.
+
+#[Route('/user/{name}' , defaults: ['name' => 'john'])]
+
+// on peut utiliser cette syntaxe minifiée:
+#[Route('/user/{name?john}')]
+  
+  ?>
+
+    
+    
     
     
  
